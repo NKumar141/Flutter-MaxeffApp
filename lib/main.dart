@@ -24,7 +24,7 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 3),
+        Duration(milliseconds: 1700),
         () => Navigator.pushReplacement(
             context, MaterialPageRoute(builder: (context) => Firstpage())));
   }
@@ -32,9 +32,9 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: new BoxDecoration(color: Color.fromRGBO(238, 23, 3, 1)),
+      decoration: new BoxDecoration(color: Colors.white),
 
-      child: Image.asset('assets/Maxeff TechSolns.jpg',
+      child: Image.asset('assets/Maxeff Tech-Solutions.gif',
           height: MediaQuery.of(context).size.height),
       //FlutterLogo(size: MediaQuery.of(context).size.height)); ,
     );

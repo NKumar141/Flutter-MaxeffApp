@@ -6,6 +6,7 @@ import 'package:flutter/services.dart';
 // our data
 const url = 'https://www.linkedin.com/in/nikhil-kumar-555341203/';
 const email = "maxeff141@gmail.com";
+const gitlink = 'https://github.com/NKumar141/Flutter-MaxeffApp';
 
 class aboutpage extends StatelessWidget {
   @override
@@ -68,6 +69,12 @@ class aboutpage extends StatelessWidget {
                       ScaffoldMessenger.of(context).showSnackBar(SnackBar(
                           content: Text('Copied to your clipboard !')));
                     });
+                  }),
+              InfoCard(
+                  text: 'Github Source Code',
+                  icon: Icons.web,
+                  onPressed: () {
+                    launch(gitlink, enableJavaScript: true);
                   }),
             ],
           ),
