@@ -1,86 +1,76 @@
 import 'package:flutter/material.dart';
+import 'info.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'package:flutter/services.dart';
 
-class Aboutpage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Home4(),
-      debugShowCheckedModeBanner: false,
-    );
-  }
-}
+// our data
+const url = 'https://www.linkedin.com/in/nikhil-kumar-555341203/';
+const email = "maxeff141@gmail.com";
 
-class Home4 extends StatefulWidget {
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<Home4> {
-  Button(String s, String l) {
-    return Container(
-      margin: EdgeInsets.all(25),
-      child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-          primary: Colors.indigo.shade900,
-          shape: StadiumBorder(),
-        ),
-        child: Text(
-          s,
-          style: TextStyle(fontSize: 30.0),
-        ),
-        onPressed: () {
-          launch(l, enableJavaScript: true);
-        },
-      ),
-    );
-  }
-  // const url =
-  //               'https://drive.google.com/file/d/1xw3dF4st1jKdmG9ShAH1F4MWL5drSVtp/view?usp=drivesdk';
-  //           launch(url, enableJavaScript: true);
-
+class aboutpage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Maxeff Application"),
-        elevation: 10,
-        flexibleSpace: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.blue.shade900, Colors.red.shade900],
-                end: Alignment.topLeft,
-                begin: Alignment.bottomRight),
+        backgroundColor: Colors.blueGrey[800],
+        body: SafeArea(
+          minimum: const EdgeInsets.only(top: 100),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: <Widget>[
+              CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage('assets/Maxeff TechSolns.jpg'),
+              ),
+              Text(
+                "Maxeff TechSolutions",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 40.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Pacifico",
+                ),
+              ),
+              Text(
+                "Reachout to work together or for queries",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                    fontSize: 30,
+                    color: Colors.blueGrey[200],
+                    letterSpacing: 2.5,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: "Source Sans Pro"),
+              ),
+              SizedBox(
+                height: 20,
+                width: 200,
+                child: Divider(
+                  color: Colors.white,
+                ),
+              ),
+
+              // we will be creating a new widget name info carrd
+
+              //InfoCard(text: phone, icon: Icons.phone, onPressed: () async {}),
+              InfoCard(
+                  text: url,
+                  icon: Icons.web,
+                  onPressed: () {
+                    launch(url, enableJavaScript: true);
+                  }),
+
+              InfoCard(
+                  text: email,
+                  icon: Icons.email,
+                  onPressed: () async {
+                    //await Clipboard.setData(ClipboardData(text: email));
+                    Clipboard.setData(new ClipboardData(text: email)).then((_) {
+                      ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                          content: Text('Copied to your clipboard !')));
+                    });
+                  }),
+            ],
           ),
-        ),
-      ),
-      body: Center(
-          child: ListView(
-        //mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          Button('Work Power Energy',
-              'https://drive.google.com/file/d/1Ec2usSIQBeJv639mtWPsL8RKAE9vMBqM/view?usp=sharing'),
-          Button('Thermodynamics',
-              'https://drive.google.com/file/d/1SIAeDtgMJ3GbqrigLrvhkmS8HMneA6J4/view?usp=sharing'),
-          Button('Rotational Motion',
-              'https://drive.google.com/file/d/12PP1lhCXcN1CUyWN1AeeU1iTWTjdkHet/view?usp=sharing'),
-          Button('Optics',
-              'https://drive.google.com/file/d/1t4sRnLip_RWJrijyNJrY_9XPkfecKi-0/view?usp=sharing'),
-          Button('Kinematics',
-              'https://drive.google.com/file/d/1DPjSzfmjsnCdWeL4-Xn-460sKk75vazz/view?usp=sharing'),
-          Button('Electrostatics',
-              'https://drive.google.com/file/d/1iVFxOCKkiqBtcVMh7cF2raXuAD-QfsIM/view?usp=sharing'),
-          Button('Electromagnitic Induction',
-              'https://drive.google.com/file/d/1vMCd2yZ2xoJGBA_MZ20Vn37inrkdIcKr/view?usp=sharing'),
-          Button('Circular Motion',
-              'https://drive.google.com/file/d/1BeILn4NkYqJqZaPCcuvHu9oAPGmCeyc_/view?usp=sharing'),
-          Button('Calorimetry',
-              'https://drive.google.com/file/d/1J8ghNq9Q2EpIAQkqTqLvt6SpXiTKcGB0/view?usp=sharing'),
-          Button('Alternating Current',
-              'https://drive.google.com/file/d/1AshgYwa8-mtuYmyWv3l1GGUx0zj1mRbA/view?usp=sharing'),
-        ],
-      )),
-    );
+        ));
   }
 }

@@ -23,18 +23,19 @@ class _MyHomePageState extends State<Home1> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.indigo[50],
       appBar: AppBar(
-        title: Text("Maxeff Application"),
+        title: Text("JEE Notes"),
         centerTitle: true,
-        // actions: [
-        //   IconButton(
-        //     icon: Icon(Icons.adb_outlined),
-        //     onPressed: () {
-        //       Navigator.push(context,
-        //           MaterialPageRoute(builder: (context) => Aboutpage()));
-        //     },
-        //   ),
-        // ],
+        actions: [
+          IconButton(
+            icon: Icon(Icons.adb_outlined),
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => aboutpage()));
+            },
+          ),
+        ],
         elevation: 10,
         flexibleSpace: Container(
           decoration: BoxDecoration(

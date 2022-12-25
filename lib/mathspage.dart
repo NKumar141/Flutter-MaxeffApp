@@ -49,7 +49,7 @@ class _MyHomePageState extends State<Home3> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Maxeff Application"),
+        title: Text("JEE Notes"),
         centerTitle: true,
         // actions: [
         //   IconButton(
