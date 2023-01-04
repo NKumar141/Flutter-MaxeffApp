@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'info.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
+import 'package:getwidget/getwidget.dart';
 
 // our data
 const url = 'https://www.linkedin.com/in/nikhil-kumar-555341203/';
@@ -14,16 +15,17 @@ class aboutpage extends StatelessWidget {
     return Scaffold(
         backgroundColor: Colors.blueGrey[800],
         body: SafeArea(
-          minimum: const EdgeInsets.only(top: 100),
+          minimum: const EdgeInsets.only(top: 50),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
               CircleAvatar(
-                radius: 50,
-                backgroundImage: AssetImage('assets/Maxeff TechSolns.jpg'),
+                radius: 60,
+                backgroundImage: AssetImage('assets/mee.jpg'),
               ),
               Text(
-                "Maxeff TechSolutions",
+                "Nikhil Kumar",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 40.0,
@@ -32,6 +34,27 @@ class aboutpage extends StatelessWidget {
                   fontFamily: "Pacifico",
                 ),
               ),
+              Text(
+                "Flutter Developer | Application Developer",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Pacifico",
+                ),
+              ),
+              Text(
+                "Freelancer",
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 16.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: "Pacifico",
+                ),
+              ),
+
               Text(
                 "Reachout to work together or for queries",
                 textAlign: TextAlign.center,
@@ -53,13 +76,34 @@ class aboutpage extends StatelessWidget {
               // we will be creating a new widget name info carrd
 
               //InfoCard(text: phone, icon: Icons.phone, onPressed: () async {}),
+              GestureDetector(
+                onTap: () {
+                  launch(url, enableJavaScript: true);
+                },
+                child: Card(
+                  color: Colors.white,
+                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                  child: ListTile(
+                    leading: ImageIcon(
+                      const AssetImage("assets/github.png"),
+                      size: 10,
+                    ),
+                    title: Text(
+                      'LinkedIn',
+                      style: TextStyle(
+                          color: Colors.teal,
+                          fontSize: 20,
+                          fontFamily: "Source Sans Pro"),
+                    ),
+                  ),
+                ),
+              ),
               InfoCard(
-                  text: url,
-                  icon: Icons.web,
+                  text: 'LinkedIn',
+                  icon: Icons.abc,
                   onPressed: () {
                     launch(url, enableJavaScript: true);
                   }),
-
               InfoCard(
                   text: email,
                   icon: Icons.email,
@@ -72,7 +116,7 @@ class aboutpage extends StatelessWidget {
                   }),
               InfoCard(
                   text: 'Github Source Code',
-                  icon: Icons.web,
+                  icon: Icons.abc,
                   onPressed: () {
                     launch(gitlink, enableJavaScript: true);
                   }),

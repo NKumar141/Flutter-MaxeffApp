@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../aboutpage.dart';
 import '../../../constants.dart';
 import '../../../widgets/logo.dart';
 import 'fade_slide_transition.dart';
@@ -19,9 +20,24 @@ class Header extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          const Logo(
-            color: kBlue,
-            size: 58.0,
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Logo(
+                color: kBlue,
+                size: 58.0,
+              ),
+              IconButton(
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => aboutpage()));
+                },
+                icon: Icon(Icons.code_sharp),
+                alignment: Alignment.topRight,
+                color: Colors.black,
+                iconSize: 30,
+              ),
+            ],
           ),
           const SizedBox(height: kSpaceM),
           FadeSlideTransition(
