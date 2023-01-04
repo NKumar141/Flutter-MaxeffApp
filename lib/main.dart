@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:async';
 import 'firstpage.dart';
+import 'main2.dart';
 
 void main() => runApp(Splash());
 
@@ -26,7 +27,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Timer(
         Duration(milliseconds: 1700),
         () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => Firstpage())));
+            context, MaterialPageRoute(builder: (context) => Appext())));
   }
 
   @override

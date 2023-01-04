@@ -6,7 +6,7 @@ import 'package:flutter/services.dart';
 // our data
 const url = 'https://www.linkedin.com/in/nikhil-kumar-555341203/';
 const email = "maxeff141@gmail.com";
-const gitlink = 'https://github.com/NKumar141/Flutter-MaxeffApp';
+const gitlink = 'https://github.com/NKumar141/Flutter-MaxeffApp/tree/master';
 
 class aboutpage extends StatelessWidget {
   @override

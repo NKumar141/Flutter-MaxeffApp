@@ -29,7 +29,10 @@ class _MyHomePageState extends State<Home1> {
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon(Icons.code_sharp),
+            icon: Icon(
+              Icons.code_sharp,
+              size: 24,
+            ),
             onPressed: () {
               Navigator.push(context,
                   MaterialPageRoute(builder: (context) => aboutpage()));
