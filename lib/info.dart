@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class InfoCard extends StatelessWidget {
   // the values we need
@@ -18,9 +19,10 @@ class InfoCard extends StatelessWidget {
         color: Colors.white,
         margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
         child: ListTile(
-          leading: Icon(
+          leading: FaIcon(
             icon,
             color: Colors.teal,
+            size: 30,
           ),
           title: Text(
             text,

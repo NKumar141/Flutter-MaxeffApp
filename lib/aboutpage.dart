@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'info.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:flutter/services.dart';
-import 'package:getwidget/getwidget.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // our data
 const url = 'https://www.linkedin.com/in/nikhil-kumar-555341203/';
@@ -76,31 +76,10 @@ class aboutpage extends StatelessWidget {
               // we will be creating a new widget name info carrd
 
               //InfoCard(text: phone, icon: Icons.phone, onPressed: () async {}),
-              GestureDetector(
-                onTap: () {
-                  launch(url, enableJavaScript: true);
-                },
-                child: Card(
-                  color: Colors.white,
-                  margin: EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                  child: ListTile(
-                    leading: ImageIcon(
-                      const AssetImage("assets/github.png"),
-                      size: 10,
-                    ),
-                    title: Text(
-                      'LinkedIn',
-                      style: TextStyle(
-                          color: Colors.teal,
-                          fontSize: 20,
-                          fontFamily: "Source Sans Pro"),
-                    ),
-                  ),
-                ),
-              ),
+
               InfoCard(
                   text: 'LinkedIn',
-                  icon: Icons.abc,
+                  icon: FontAwesomeIcons.linkedin,
                   onPressed: () {
                     launch(url, enableJavaScript: true);
                   }),
@@ -116,7 +95,7 @@ class aboutpage extends StatelessWidget {
                   }),
               InfoCard(
                   text: 'Github Source Code',
-                  icon: Icons.abc,
+                  icon: FontAwesomeIcons.github,
                   onPressed: () {
                     launch(gitlink, enableJavaScript: true);
                   }),

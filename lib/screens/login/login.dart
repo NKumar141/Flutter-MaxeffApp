@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:maxeffproject/screens/login/widgets/fade_slide_transition.dart';
-
+import 'subject.dart';
 import '../../chemistrypage.dart';
 import '../../constants.dart';
 import '../../mathspage.dart';
@@ -165,92 +165,95 @@ class _LoginState extends State<Login> with SingleTickerProviderStateMixin {
                   SizedBox(
                     height: 90,
                   ),
-                  FadeSlideTransition(
-                    animation: _headerTextAnimation,
-                    additionalOffset: 15,
-                    child: Container(
-                      margin: EdgeInsets.all(19),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                        children: [
-                          ElevatedButton(
-                            style: ElevatedButton.styleFrom(
-                              padding: EdgeInsets.symmetric(
-                                  horizontal: 40.0, vertical: 15.0),
-                              primary: Colors.deepPurpleAccent,
-                              shape: StadiumBorder(),
-                            ),
-                            child: Text(
-                              'Physics',
-                              style: TextStyle(fontSize: 30.0),
-                            ),
-                            onPressed: () {
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => Physicspage()),
-                              );
-                            },
-                          ),
-                        ],
-                      ),
-                    ),
-                  ),
+                  Subject(sub: "Physics", where: Physicspage()),
+                  Subject(sub: "Maths", where: Mathspage()),
+                  Subject(sub: "Chemistry", where: Chemistrypage()),
+                  // Container(
+                  //   height: 50.0,
+                  //   margin: EdgeInsets.all(10),
+                  //   child: ElevatedButton(
+                  //     onPressed: () {},
+                  //     style: ElevatedButton.styleFrom(
+                  //       shape: RoundedRectangleBorder(
+                  //           borderRadius: BorderRadius.circular(80.0)),
+                  //       padding: EdgeInsets.all(0.0),
+                  //     ),
+                  //     child: Ink(
+                  //       decoration: BoxDecoration(
+                  //           gradient: LinearGradient(
+                  //             colors: [Color(0xff374ABE), Color(0xff64B6FF)],
+                  //             begin: Alignment.centerLeft,
+                  //             end: Alignment.centerRight,
+                  //           ),
+                  //           borderRadius: BorderRadius.circular(30.0)),
+                  //       child: Container(
+                  //         constraints:
+                  //             BoxConstraints(maxWidth: 250.0, minHeight: 50.0),
+                  //         alignment: Alignment.center,
+                  //         child: Text(
+                  //           "Gradient Button",
+                  //           textAlign: TextAlign.center,
+                  //           style: TextStyle(color: Colors.white, fontSize: 15),
+                  //         ),
+                  //       ),
+                  //     ),
+                  //   ),
+                  // ),
 
-                  FadeSlideTransition(
-                    animation: _headerTextAnimation,
-                    additionalOffset: 15,
-                    child: Container(
-                      margin: EdgeInsets.all(19),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 40.0, vertical: 15.0),
-                          primary: Colors.deepPurpleAccent,
-                          shape: StadiumBorder(),
-                        ),
-                        child: Text(
-                          'Mathematics',
-                          style: TextStyle(fontSize: 30.0),
-                        ),
-                        // color: Colors.blueAccent,
-                        // textColor: Colors.white,
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Mathspage()));
-                        },
-                      ),
-                    ),
-                  ),
-                  FadeSlideTransition(
-                    animation: _headerTextAnimation,
-                    additionalOffset: 15,
-                    child: Container(
-                      margin: EdgeInsets.all(19),
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          padding: EdgeInsets.symmetric(
-                              horizontal: 40.0, vertical: 15.0),
-                          primary: Colors.deepPurpleAccent,
-                          shape: StadiumBorder(),
-                        ),
-                        child: Text(
-                          'Chemistry',
-                          style: TextStyle(fontSize: 30.0),
-                        ),
-                        // color: Colors.blueAccent,
-                        // textColor: Colors.white,
-                        onPressed: () {
-                          Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                  builder: (context) => Chemistrypage()));
-                        },
-                      ),
-                    ),
-                  ),
+                  // FadeSlideTransition(
+                  //   animation: _headerTextAnimation,
+                  //   additionalOffset: 15,
+                  //   child: Container(
+                  //     margin: EdgeInsets.all(19),
+                  //     child: ElevatedButton(
+                  //       style: ElevatedButton.styleFrom(
+                  //         padding: EdgeInsets.symmetric(
+                  //             horizontal: 40.0, vertical: 15.0),
+                  //         primary: Colors.deepPurpleAccent,
+                  //         //shape: StadiumBorder(),
+                  //       ),
+                  //       child: Text(
+                  //         'Mathematics',
+                  //         style: TextStyle(fontSize: 30.0),
+                  //       ),
+                  //       // color: Colors.blueAccent,
+                  //       // textColor: Colors.white,
+                  //       onPressed: () {
+                  //         Navigator.push(
+                  //             context,
+                  //             MaterialPageRoute(
+                  //                 builder: (context) => Mathspage()));
+                  //       },
+                  //     ),
+                  //   ),
+                  // ),
+                  // FadeSlideTransition(
+                  //   animation: _headerTextAnimation,
+                  //   additionalOffset: 15,
+                  //   child: Container(
+                  //     margin: EdgeInsets.all(19),
+                  //     child: ElevatedButton(
+                  //       style: ElevatedButton.styleFrom(
+                  //         padding: EdgeInsets.symmetric(
+                  //             horizontal: 40.0, vertical: 15.0),
+                  //         primary: Colors.deepPurpleAccent,
+                  //         // shape: StadiumBorder(),
+                  //       ),
+                  //       child: Text(
+                  //         'Chemistry',
+                  //         style: TextStyle(fontSize: 30.0),
+                  //       ),
+                  //       // color: Colors.blueAccent,
+                  //       // textColor: Colors.white,
+                  //       onPressed: () {
+                  //         Navigator.push(
+                  //             context,
+                  //             MaterialPageRoute(
+                  //                 builder: (context) => Chemistrypage()));
+                  //       },
+                  //     ),
+                  //   ),
+                  // ),
                 ],
               ),
             ),
